@@ -16,7 +16,7 @@
             return $this->titulo;
         }*/
 
-        public function obtenerPeliculas()
+        public static function obtenerPeliculas()
         {
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
             $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM movies");
