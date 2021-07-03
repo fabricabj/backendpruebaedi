@@ -6,10 +6,9 @@ public function RetornarPeliculas($request, $response, $args){
     $listaDeParametros = $request->getParsedBody();
     // $hashDeContrasena = password_hash($listaDeParametros['nuevaContra'], PASSWORD_DEFAULT);
 
-    $pelicula = new Peliculas();
-    $pelicula->titulo = $listaDeParametros['titulo'];
+    
 
-    Peliculas::obtenerPeliculas($pelicula);
+    Peliculas::obtenerPeliculas();
     return $response;
     //$response->getBody()->write(json_encode($usuario));
 
