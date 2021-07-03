@@ -5,7 +5,7 @@
         //atributos
         public $titulo;
         public $pathImagen;
-        public $descripcion
+        public $descripcion;
         
 
       /*  public static function RetornarCantidad(){
@@ -23,7 +23,7 @@
             $consulta->execute();
     
             //return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
-            //return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
+            return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
         }
 
       /*  public  function CrearPeliculas()
