@@ -12,6 +12,8 @@ require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/acessoDatos/AcessoDatos.php';
 require __DIR__ . '/entidades/usuario.php';
 require __DIR__ . '/controllers/usuarioController.php';
+require __DIR__ . '/entidades/peliculas.php';
+require __DIR__ . '/controllers/peliculasController.php';
 
 $app = AppFactory::create();
 $app->addErrorMiddleware(true, true, true);
@@ -63,6 +65,7 @@ $app->post('[/]', function (Request $request, Response $response, array $args) {
 */
 $app->post('[/]', \usuarioController::class . ':CrearUsuario');
 $app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
+$app->post('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');
 //$app->post('/peliculas[/]', \usuarioController::class . ':retornarUsuario');
 
 

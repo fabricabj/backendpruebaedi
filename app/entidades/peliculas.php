@@ -1,6 +1,6 @@
 <?php   
 
-    class Pelicula{
+    class Peliculas{
   
         //atributos
         public $titulo;
@@ -8,24 +8,25 @@
         public $descripcion
         
 
-        public static function RetornarCantidad(){
+      /*  public static function RetornarCantidad(){
             return Pelicula::$cantidad;
         }
 
         public function MostrarValor(){
             return $this->titulo;
-        }
+        }*/
 
-        public static function obtenerTodos()
+        public static function obtenerPeliculas()
         {
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
-            $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM peliculas");
+            $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM movies");
             $consulta->execute();
     
-            return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
+            //return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
+            return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
         }
 
-        public  function CrearUsuario()
+      /*  public  function CrearPeliculas()
         {
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
             $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `pelicula`(`titulo`, `pathImagen`, `descripcion`) VALUES (?,?,?)");
@@ -33,8 +34,8 @@
             $this->autor;
             $consulta->execute();
     
-            return $consulta->fetchAll(PDO::FETCH_CLASS, 'Provincia');
-        }
+            return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
+        }*/
         
     }
 
