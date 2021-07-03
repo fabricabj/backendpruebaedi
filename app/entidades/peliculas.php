@@ -22,7 +22,7 @@
             $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM `movies`");
             $consulta->execute();
            
-            //return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
+            return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
             //return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
         }
 
