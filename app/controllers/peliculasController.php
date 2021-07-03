@@ -10,6 +10,7 @@ public function RetornarPeliculas($request, $response, $args){
     $pelicula->titulo = $listaDeParametros['titulo'];
 
     Peliculas::obtenerPeliculas($pelicula);
+    return $response;
     //$response->getBody()->write(json_encode($usuario));
 
     /*$arratProvincias = Peliculas::obtenerPeliculas();
