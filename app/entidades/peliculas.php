@@ -16,12 +16,12 @@
             return $this->titulo;
         }*/
 
-        public static function obtenerPeliculas()
+        public static function obtenerPeliculas($pelicula)
         {
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
             $consulta = $objAccesoDatos->prepararConsulta("SELECT titulo FROM movies");
-            $consulta->execute();
-    
+            $consulta->execute([$pelicula->titulo]);
+           
             //return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
             //return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
         }
