@@ -21,8 +21,13 @@
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
             $consulta = $objAccesoDatos->prepararConsulta("SELECT imagen FROM `movies` WHERE imagen='https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_UX182_CR0,0,182,268_AL_.jpg'");
             $consulta->execute();
+            foreach ($consulta as $row) {
+                print $row['imagen'] . "\t";
+               /* print $row['color'] . "\t";
+                print $row['calories'] . "\n";*/
+            }
            
-            return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
+            //return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
             
             //return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
         }
