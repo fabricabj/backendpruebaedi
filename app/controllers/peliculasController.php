@@ -14,7 +14,7 @@ public function RetornarPeliculas($request, $response, $args){
     $response->getBody()->Write(json_encode($arratProvincias));
 
     return $response ->withHeader('Content-Type', 'application/json');;*/
-    Peliculas::RetornarPeliculas();
+    Peliculas::obtenerPeliculas();
         //$response->getBody()->write(json_encode($usuario));
 
         return $response;
