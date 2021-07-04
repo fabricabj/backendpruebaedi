@@ -23,8 +23,11 @@
             $consulta->execute();
             $resultado_peliculas = $consulta->fetchAll();
             foreach($resultado_peliculas as $row){
-                    echo $row['imagen'];
-                    echo $row['titulo'];
+                    echo "<div>
+                             <img src='".$row['imagen']."'>
+                             <p>".$row['titulo']."</p>
+                           </div>";
+                    
             }
             
             //return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
