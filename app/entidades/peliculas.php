@@ -25,7 +25,7 @@
             foreach($resultado_peliculas as $row){
                     echo "<div>
                              <img src='".$row['imagen']."'>
-                             <p>".$row['titulo']."</p>
+                            
                            </div>";
                     
             }
