@@ -21,15 +21,14 @@
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
             $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM `movies`");
             $consulta->execute();
-            echo "<div class='row'>
-                     <div class='col-md-3'>";
-            $resultado_peliculas = $consulta->fetchAll();
-            foreach($resultado_peliculas as $row){
+            echo "<div class='row'>";
+            /*$resultado_peliculas = $consulta->fetchAll();
+            foreach($resultado_peliculas as $row){*/
+            while($row = $consulta->fetch(PDO::FETCH_BOTH){
                     echo "<img  src='".$row['imagen']."'><p>".$row['titulo']."</p>";
      
             }
-            echo "</div>
-                  </div>";
+            echo "</div>";
             
             //return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
             
