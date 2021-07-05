@@ -22,9 +22,8 @@
             $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM `movies`");
             $consulta->execute();
             echo "<div class='row'>";
-            /*$resultado_peliculas = $consulta->fetchAll();
-            foreach($resultado_peliculas as $row){*/
-            while($row = $consulta->fetch(PDO::FETCH_BOTH)){
+            $resultado_peliculas = $consulta->fetchAll();
+            foreach($resultado_peliculas as $row){
                     echo "<div><img  src='".$row['imagen']."'><p>".$row['titulo']."</p></div>";
      
             }
