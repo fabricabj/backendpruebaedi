@@ -23,10 +23,7 @@
             $consulta->execute();
             $resultado_peliculas = $consulta->fetchAll();
             foreach($resultado_peliculas as $row){
-                    echo "<div>
-                             <img style='width:300px;height:300px' src='".$row['imagen']."'>
-                             <p>".$row['titulo']."</p>
-                          </div>";
+                    echo "<p>".$row['titulo']."</p>";
         
             }
             
