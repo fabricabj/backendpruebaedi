@@ -8,7 +8,6 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Slim\Factory\AppFactory;
 use Slim\Routing\RouteCollectorProxy;
 use Slim\Routing\RouteContext;
-require __DIR__ . 'bootstrap-4.3.1-dist/css/bootstrap.min.css';
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/acessoDatos/AcessoDatos.php';
 require __DIR__ . '/entidades/usuario.php';
