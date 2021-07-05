@@ -24,14 +24,10 @@
             echo "<div class='row'>";
             /*$resultado_peliculas = $consulta->fetchAll();
             foreach($resultado_peliculas as $row){*/
-            while($row = $consulta->fetch(PDO::FETCH_BOTH)){?>
-              <div>
-
-            <?php  echo "<img  src='".$row['imagen']."'><p>".$row['titulo']."</p>";?>
-              </div>
-
+            while($row = $consulta->fetch(PDO::FETCH_BOTH)){
+                    echo "<img  src='".$row['imagen']."'><p>".$row['titulo']."</p>";
      
-           <?php }
+            }
             echo "</div>";
             
             //return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
