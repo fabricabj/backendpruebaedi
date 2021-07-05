@@ -25,7 +25,7 @@
             /*$resultado_peliculas = $consulta->fetchAll();
             foreach($resultado_peliculas as $row){*/
             while($row = $consulta->fetch(PDO::FETCH_BOTH)){?>
-              <div id="id<?php echo $row['id_pelicula'];?>">
+              <div>
 
             <?php  echo "<img  src='".$row['imagen']."'><p>".$row['titulo']."</p>";?>
               </div>
