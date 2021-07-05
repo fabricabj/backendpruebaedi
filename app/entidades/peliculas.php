@@ -1,5 +1,5 @@
 <?php   
-
+    require 'bootstrap-4.3.1-dist/css/bootstrap.min.css';
     class Peliculas{
   
         //atributos
@@ -23,7 +23,7 @@
             $consulta->execute();
             $resultado_peliculas = $consulta->fetchAll();
             foreach($resultado_peliculas as $row){
-                    echo "<div><img  src='".$row['imagen']."'><p>".$row['titulo']."</p></div>";
+                    echo "<div class='row'><img  src='".$row['imagen']."'><p>".$row['titulo']."</p></div>";
      
             }
             
