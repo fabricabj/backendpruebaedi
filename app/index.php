@@ -8,12 +8,14 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Slim\Factory\AppFactory;
 use Slim\Routing\RouteCollectorProxy;
 use Slim\Routing\RouteContext;
+require __DIR__ . 'bootstrap-4.3.1-dist/css/bootstrap.min.css';
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/acessoDatos/AcessoDatos.php';
 require __DIR__ . '/entidades/usuario.php';
 require __DIR__ . '/controllers/usuarioController.php';
 require __DIR__ . '/entidades/peliculas.php';
 require __DIR__ . '/controllers/peliculasController.php';
+
 
 $app = AppFactory::create();
 $app->addErrorMiddleware(true, true, true);
