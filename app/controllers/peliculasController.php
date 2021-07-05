@@ -3,7 +3,7 @@
 class peliculasController{
 
 public function RetornarPeliculas($request, $response, $args){
-    $listaDeParametros = $request->getParsedBody();
+    //$listaDeParametros = $request->getParsedBody();
     // $hashDeContrasena = password_hash($listaDeParametros['nuevaContra'], PASSWORD_DEFAULT);
     $jsonpeliculas = Peliculas::obtenerPeliculas();
     $response->getBody()->Write(json_encode($jsonpeliculas));

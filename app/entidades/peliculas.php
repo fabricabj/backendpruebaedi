@@ -19,7 +19,7 @@
         public static function obtenerPeliculas()
         {
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
-            $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM `movies`");
+            $consulta = $objAccesoDatos->prepararConsulta("SELECT id_pelicula as valor, titulo FROM `movies`");
             $consulta->execute();
           /*  $resultado_peliculas = $consulta->fetchAll();
             foreach($resultado_peliculas as $row){
