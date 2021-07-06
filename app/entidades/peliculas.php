@@ -44,5 +44,17 @@
         }*/
         
     }
+    public function CrearPeliculas($pelis)
+{
+
+
+    $objAccesoDatos = AccesoDatos::obtenerInstancia();
+    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `movies` VALUES (00,'$pelis->titulo',/*'$pelis->genero'*/ null ,'$pelis->Duracion','$pelis->Descripcion',$pelis->puntaje,'$pelis->imagen',$pelis->anio, '$pelis->trailer')");
+    
+   
+    $consulta->execute();
+
+    return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
+}
 
 ?>

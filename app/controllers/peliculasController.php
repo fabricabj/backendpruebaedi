@@ -27,7 +27,7 @@ public function Alta($request, $response, $args){
 
     $listaDeParametros = $request->getParsedBody();
     $pelis->titulo =  $listaDeParametros['titulo'];
-    $pelis->genero =  $listaDeParametros['genero'];
+    //$pelis->genero =  $listaDeParametros['genero'];
     $pelis->duracion =  $listaDeParametros['duracion'];
     $pelis->descripcion =  $listaDeParametros['descripcion'];
     $pelis->puntaje =  $listaDeParametros['puntaje'];
