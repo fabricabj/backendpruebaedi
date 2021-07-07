@@ -64,10 +64,10 @@ $app->post('[/]', function (Request $request, Response $response, array $args) {
     return $response;
 });asas/
 */
-$app->post('[/]', \usuarioController::class . ':CrearUsuario');
+/*$app->post('[/]', \usuarioController::class . ':CrearUsuario');
 $app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
-$app->get('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');
-$app->post('/peliculas/alta[/]', \peliculasController::class . ':Alta');
+$app->get('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');*/
+$app->post('[/]', \peliculasController::class . ':Alta');
 //$app->get('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');
 //$app->post('/peliculas[/]', \usuarioController::class . ':retornarUsuario');
 
