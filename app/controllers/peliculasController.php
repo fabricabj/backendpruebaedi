@@ -34,7 +34,7 @@ public function Alta($request, $response, $args){
     $pelis->imagen =  $listaDeParametros['imagen'];
     $pelis->anio =  $listaDeParametros['anio'];
     $pelis->trailer =  $listaDeParametros['trailer'];
-    $pelis->CrearArticulo($pelis);
+    $pelis->CrearPeliculas($pelis);
     $response->getBody()->Write("Creado");
     
     return $response ;
