@@ -22,22 +22,7 @@ public function RetornarPeliculas($request, $response, $args){
     return $response;
 }
 public function Alta($request, $response, $args){
-    $pelis=  new Peliculas();
-
-
-    $listaDeParametros = $request->getParsedBody();
-    $pelis->titulo =  $listaDeParametros['titulo'];
-    //$pelis->genero =  $listaDeParametros['genero'];
-    $pelis->duracion =  $listaDeParametros['duracion'];
-    $pelis->descripcion =  $listaDeParametros['descripcion'];
-    $pelis->puntaje =  $listaDeParametros['puntaje'];
-    $pelis->imagen =  $listaDeParametros['imagen'];
-    $pelis->anio =  $listaDeParametros['anio'];
-    $pelis->trailer =  $listaDeParametros['trailer'];
-    $pelis->CrearPeliculas($pelis);
-    $response->getBody()->Write("Creado");
-    
-    return $response ;
+    echo "hola";
 }
 
 
