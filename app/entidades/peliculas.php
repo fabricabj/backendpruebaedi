@@ -49,10 +49,10 @@
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `movies`(`titulo`) VALUES (?)");
+    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `movies`(`titulo`,`duracion`,`descripcion`,`puntaje`,`imagen`,`anio`,`trailer`) VALUES (?,?,?,?,?,?,?)");
     
    
-    $consulta->execute([$pelis->titulo]);
+    $consulta->execute([$pelis->titulo, $pelis->duracion,$pelis->descripcion, $pelis->puntaje,$pelis->imagen, $pelis->anio,$pelis->trailer]);
 
     return;
 }

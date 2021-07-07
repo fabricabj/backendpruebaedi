@@ -27,12 +27,12 @@ public function Alta($request, $response, $args){
 
         $peliculas = new Peliculas();
         $peliculas->titulo = $listaDeParametros['titulo'];
-        /*$peliculas->duracion = $listaDeParametros['duracion'];
+        $peliculas->duracion = $listaDeParametros['duracion'];
         $peliculas->descripcion = $listaDeParametros['descripcion'];
         $peliculas->puntaje = $listaDeParametros['puntaje'];
         $peliculas->imagen = $listaDeParametros['imagen'];
         $peliculas->anio = $listaDeParametros['anio'];
-        $peliculas->trailer = $listaDeParametros['trailer'];*/
+        $peliculas->trailer = $listaDeParametros['trailer'];
 
         Peliculas::CrearPeliculas($peliculas);
         $response->getBody()->write(json_encode($peliculas));
