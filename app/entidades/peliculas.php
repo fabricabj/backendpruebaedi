@@ -43,7 +43,7 @@
             return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
         }*/
         
-    }
+    
     public function CrearPeliculas($pelis)
 {
 
@@ -56,5 +56,5 @@
 
     return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
 }
-
+}
 ?>
