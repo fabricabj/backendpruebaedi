@@ -22,6 +22,7 @@ public function RetornarPeliculas($request, $response, $args){
     return $response;
 }
 public function Alta($request, $response, $args){
+    $listaDeParametros = $request->getParsedBody();
     echo "hola";
 }
 
