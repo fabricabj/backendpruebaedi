@@ -49,12 +49,12 @@
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `movies` VALUES (00,'$pelis->titulo',/*'$pelis->genero'*/ null ,'$pelis->Duracion','$pelis->Descripcion',$pelis->puntaje,'$pelis->imagen',$pelis->anio, '$pelis->trailer')");
+    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `movies`(`titulo`,`duracion`,`descripcion`,`puntaje`,`imagen`,`anio`,`trailer`) VALUES (?,?,?,?,?,?,?)");
     
    
-    $consulta->execute();
+    $consulta->execute([$pelis->titulo, $pelis->duracion,$pelis->descripcion, $pelis->puntaje,$pelis->imagen, $pelis->anio,$pelis->trailer]);
 
-    return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
+    return;
 }
 }
 ?>

@@ -22,8 +22,22 @@ public function RetornarPeliculas($request, $response, $args){
     return $response;
 }
 public function Alta($request, $response, $args){
-    $listaDeParametros = $request->getParsedBody();
-    echo "hola";
+       $listaDeParametros = $request->getParsedBody();
+        // $hashDeContrasena = password_hash($listaDeParametros['nuevaContra'], PASSWORD_DEFAULT);
+
+        $peliculas = new Peliculas();
+        $peliculas->titulo = $listaDeParametros['titulo'];
+        $peliculas->duracion = $listaDeParametros['duracion'];
+        $peliculas->descripcion = $listaDeParametros['descripcion'];
+        $peliculas->puntaje = $listaDeParametros['puntaje'];
+        $peliculas->imagen = $listaDeParametros['imagen'];
+        $peliculas->anio = $listaDeParametros['anio'];
+        $peliculas->trailer = $listaDeParametros['trailer'];
+
+        Peliculas::CrearPeliculas($peliculas);
+        $response->getBody()->write(json_encode($peliculas));
+
+        return $response;
 }
 
 
