@@ -68,6 +68,7 @@ $app->post('[/]', \usuarioController::class . ':CrearUsuario');
 $app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
 $app->get('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');
 $app->post('/altapelicula[/]', \peliculasController::class . ':Alta');
+$app->post('/modificarpelicula[/]', \peliculasController::class . ':FormModPeliculas');
 //$app->get('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');
 //$app->post('/peliculas[/]', \usuarioController::class . ':retornarUsuario');
 

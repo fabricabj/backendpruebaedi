@@ -40,6 +40,16 @@ public function Alta($request, $response, $args){
 
         return $response;
 }
+public function FormModPelicula($request, $response, $args){
+    $listaDeParametros = $request->getParsedBody();
+     // $hashDeContrasena = password_hash($listaDeParametros['nuevaContra'], PASSWORD_DEFAULT);
+
+     $peliculas = new Peliculas();
+     $jsonpeliculas = Peliculas::obtenerPeliculasMod();
+     $response->getBody()->Write(json_encode($jsonpeliculas));
+     return $response ->withHeader('Content-Type', 'application/json');
+
+}
 
 
 }

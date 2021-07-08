@@ -21,11 +21,7 @@
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
             $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM `movies`");
             $consulta->execute();
-            /*$resultado_peliculas = $consulta->fetchAll();
-            foreach($resultado_peliculas as $row){
-                    echo "<div><img  src='".$row['imagen']."'><p>".$row['titulo']."</p></div>";
-     
-            }*/
+
             
             return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
             
@@ -56,5 +52,14 @@
 
     return;
 }
+public static function obtenerPeliculasMod($pelis)
+        {
+            $objAccesoDatos = AccesoDatos::obtenerInstancia();
+            $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM `movies` WHERE id_pelicula = ?");
+            $consulta->execute([$pelis->id_pelicula]);
+  
+            
+            return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
+        }
 }
 ?>
