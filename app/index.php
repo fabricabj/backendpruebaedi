@@ -64,7 +64,7 @@ $app->post('[/]', function (Request $request, Response $response, array $args) {
     return $response;
 });asas/
 */
-$app->post('[/]', \usuarioController::class . ':CrearUsuario');
+//$app->post('[/]', \usuarioController::class . ':CrearUsuario');
 $app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
 $app->get('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');
 $app->post('/altapelicula[/]', \peliculasController::class . ':Alta');
