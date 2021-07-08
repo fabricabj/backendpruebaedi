@@ -26,6 +26,7 @@ public function Alta($request, $response, $args){
         // $hashDeContrasena = password_hash($listaDeParametros['nuevaContra'], PASSWORD_DEFAULT);
 
         $peliculas = new Peliculas();
+        $peliculas->id_pelicula = $listaDeParametros['id_pelicula'];
         $peliculas->titulo = $listaDeParametros['titulo'];
         $peliculas->duracion = $listaDeParametros['duracion'];
         $peliculas->descripcion = $listaDeParametros['descripcion'];
