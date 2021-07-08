@@ -70,7 +70,7 @@ public static function obtenerPeliculasMod($pelis)
   
     $consulta->execute([$pelis->id_pelicula]);
 
-    return $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuarios');
+    return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
 }
 }
 ?>
