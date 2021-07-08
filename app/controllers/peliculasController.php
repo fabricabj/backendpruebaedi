@@ -55,7 +55,7 @@ public function DeletePelicula($request, $response, $args){
     $listaDeParametros = $request->getParsedBody();
     $peliculas->id_pelicula =  $listaDeParametros['id_pelicula'];
 
-    Peliculas::EliminarPelicula($peliculas)
+    Peliculas::EliminarPelicula($peliculas);
     $response->getBody()->Write("Eliminado");
     return $response;
 
