@@ -61,7 +61,7 @@ public static function obtenerPeliculasMod($pelis)
             
             return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
 }
- public function EliminarPelicula($pelis)
+ public static function EliminarPelicula($pelis)
 {
 
 
