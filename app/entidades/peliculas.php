@@ -44,7 +44,7 @@
         }*/
         
     
-    public function CrearPeliculas($pelis)
+    public static function CrearPeliculas($pelis)
 {
 
 
