@@ -66,11 +66,12 @@ public static function obtenerPeliculasMod($pelis)
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("DELETE FROM `movies` WHERE `id_pelicula` = ? ");
+    $consulta = $objAccesoDatos->prepararConsulta("DELETE FROM `movies` WHERE `id_pelicula` = (?) ");
   
     $consulta->execute([$pelis->id_pelicula]);
 
-    return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
+    //return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
+    return;
 }
 }
 ?>
