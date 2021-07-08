@@ -50,6 +50,16 @@ public function FormModPelicula($request, $response, $args){
      return $response ->withHeader('Content-Type', 'application/json');
 
 }
+public function DeletePelicula($request, $response, $args){
+    $pelis=  new Peliculas();
+    $listaDeParametros = $request->getParsedBody();
+    $peliculas->id_pelicula =  $listaDeParametros['id_pelicula'];
+
+    $pelis->EliminarArticulo($peliculas);
+    $response->getBody()->Write("Eliminado");
+    return $response;
+
+}
 
 
 }
