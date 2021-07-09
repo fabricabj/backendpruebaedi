@@ -70,7 +70,7 @@ $app->get('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');
 $app->post('/altapelicula[/]', \peliculasController::class . ':Alta');
 $app->post('/modificarpelicula[/]', \peliculasController::class . ':FormModPeliculas');
 $app->post('/eliminarpelicula[/]', \peliculasController::class . ':DeletePelicula');
-$app->get('/FormModPelicula?id='+$_GET['id']+'[/]', \peliculasController::class . ':obtenerFormMod');
+$app->post('/FormModPelicula[/]', \peliculasController::class . ':obtenerFormMod');
 //$app->get('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');
 //$app->post('/peliculas[/]', \usuarioController::class . ':retornarUsuario');
 

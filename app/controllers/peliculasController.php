@@ -62,9 +62,10 @@ public function DeletePelicula($request, $response, $args){
 }
 public function obtenerFormMod($request, $response, $args){
     $listaDeParametros = $request->getParsedBody();
- 
+    $peliculas = new Peliculas();
+    $peliculas->id_pelicula = $listaDeParametros['id_pelicula'];
     // $hashDeContrasena = password_hash($listaDeParametros['nuevaContra'], PASSWORD_DEFAULT);
-    $jsonpeliculas = Peliculas::FormModPelicula();
+    $jsonpeliculas = Peliculas::FormModPelicula($peliculas);
     $response->getBody()->Write(json_encode($jsonpeliculas));
     return $response ->withHeader('Content-Type', 'application/json');
 
