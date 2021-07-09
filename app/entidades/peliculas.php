@@ -72,7 +72,11 @@ public static function FormModPelicula($pelis)
         $consulta = $objAccesoDatos->prepararConsulta('SELECT * FROM `movies` WHERE `id_pelicula`= ?');
 
         $consulta->execute([$pelis->id_pelicula]);
-       
+        $totalJson = json_encode($consulta);
+                    $json = fopen("peliculasMod.json", "w") or
+                       die("Problemas al generar Json");
+                    fwrite($json, $totalJson);
+                    fclose($json);
         return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
 }
 }
