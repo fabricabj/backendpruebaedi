@@ -53,14 +53,14 @@
     return;
 }
 
- public static function EliminarPelicula($pelis)
+ public static function EliminarPelicula()
 {
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
     $consulta = $objAccesoDatos->prepararConsulta("DELETE FROM `movies` WHERE id_pelicula = ? ");
   
-    $consulta->execute([$pelis->id_pelicula]);
+    $consulta->execute([$_GET['id']]);
 
     //return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
     return;
