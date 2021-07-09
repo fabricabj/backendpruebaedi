@@ -68,7 +68,7 @@ public function obtenerFormMod($request, $response, $args){
     $jsonpeliculas = Peliculas::FormModPelicula($peliculas);
     $response->getBody()->Write(json_encode($jsonpeliculas));
     $totalJson = json_encode($jsonpeliculas);
-                    $json = fopen("peliculasMod.json", "w") or
+                    $json = fopen("peliculasMod.json", "a") or
                        die("Problemas al generar Json");
                     fwrite($json, $totalJson);
                     fclose($json);
