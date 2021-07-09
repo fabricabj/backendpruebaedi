@@ -71,7 +71,7 @@ public static function FormModPelicula($pelis)
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
         $consulta = $objAccesoDatos->prepararConsulta('SELECT * FROM `movies` WHERE `id_pelicula`= ?');
 
-        $consulta->execute([$pelis->id_peliculas]);
+        $consulta->execute([$pelis->id_pelicula]);
        
         return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
 }
