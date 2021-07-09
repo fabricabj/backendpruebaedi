@@ -74,7 +74,8 @@ public static function FormModPelicula($pelis)
         );
 
         $consulta->execute([$pelis->id_pelicula]);
-        return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
+        return;
+        //return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
 }
 }
 ?>
