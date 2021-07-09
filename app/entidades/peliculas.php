@@ -72,7 +72,8 @@ public static function FormModPelicula($pelis)
         $consulta = $objAccesoDatos->prepararConsulta('SELECT * FROM `movies` WHERE `id_pelicula`= ?');
 
         $consulta->execute([$pelis->id_pelicula]);
-        $totalJson = json_encode($consulta);
+        $todo=$consulta->fetchAll();
+        $totalJson = json_encode($todo);
                     $json = fopen("peliculasMod.json", "w") or
                        die("Problemas al generar Json");
                     fwrite($json, $totalJson);
