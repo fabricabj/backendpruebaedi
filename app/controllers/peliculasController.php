@@ -51,8 +51,8 @@ public function FormModPelicula($request, $response, $args){
 
 }
 public function DeletePelicula($request, $response, $args){
-    $pelis=  new Peliculas();
     $listaDeParametros = $request->getParsedBody();
+    $peliculas=  new Peliculas();
     $peliculas->id_pelicula =  $listaDeParametros['id_pelicula'];
 
     Peliculas::EliminarPelicula($peliculas);
