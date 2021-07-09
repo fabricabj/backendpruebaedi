@@ -52,15 +52,7 @@
 
     return;
 }
-public static function obtenerPeliculasMod($pelis)
-{
-            $objAccesoDatos = AccesoDatos::obtenerInstancia();
-            $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM `movies` WHERE id_pelicula = ?");
-            $consulta->execute([$pelis->id_pelicula]);
-  
-            
-            return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
-}
+
  public static function EliminarPelicula($pelis)
 {
 
@@ -72,6 +64,17 @@ public static function obtenerPeliculasMod($pelis)
 
     //return $consulta->fetchAll(PDO::FETCH_CLASS, 'Peliculas');
     return;
+}
+public static function FormModPelicula($pelis)
+    {
+   
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta(
+            'SELECT * FROM `movies` WHERE `id_pelicula`= ? '
+        );
+
+        $consulta->execute([$pelis->id_pelicula]);
+        return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
 }
 }
 ?>
