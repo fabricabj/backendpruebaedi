@@ -78,7 +78,7 @@ public function obtenerFormMod($request, $response, $args){
 public function FormMod($request, $response, $args){
     $listaDeParametros = $request->getParsedBody();
     
-    $response->getBody()->Write(json_encode($array));
+    $response->getBody()->Write("hola");
     return $response ->withHeader('Content-Type', 'application/json');
     /*$json_string = json_encode($response);
     $file = 'peliculas.json';
