@@ -74,7 +74,7 @@ public static function FormModPelicula($pelis)
         $consulta->execute([$pelis->id_pelicula]);
         $result=$consulta->fetchAll();
         $json_string = json_encode($result);
-        $file = 'peliculas.json';
+        $file = 'uploads/peliculas.json';
         file_put_contents($file, $json_string);
         return $consulta->fetchAll(PDO::FETCH_CLASS, 'peliculas');
 }
