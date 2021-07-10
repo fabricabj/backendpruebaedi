@@ -1,6 +1,7 @@
 <?php
 
 class peliculasController{
+    public $array=array();
 
 public function RetornarPeliculas($request, $response, $args){
     $listaDeParametros = $request->getParsedBody();
@@ -67,6 +68,7 @@ public function obtenerFormMod($request, $response, $args){
     // $hashDeContrasena = password_hash($listaDeParametros['nuevaContra'], PASSWORD_DEFAULT);
     $jsonpeliculas = Peliculas::FormModPelicula($peliculas);
     $response->getBody()->Write(json_encode($jsonpeliculas));
+    $array=$jsonpeliculas;
     return $response ->withHeader('Content-Type', 'application/json');
     /*$json_string = json_encode($response);
     $file = 'peliculas.json';
