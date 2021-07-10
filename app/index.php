@@ -71,7 +71,7 @@ $app->post('/altapelicula[/]', \peliculasController::class . ':Alta');
 $app->post('/modificarpelicula[/]', \peliculasController::class . ':FormModPeliculas');
 $app->post('/eliminarpelicula[/]', \peliculasController::class . ':DeletePelicula');
 $app->post('/FormModPelicula[/]', \peliculasController::class . ':obtenerFormMod');
-$app->get('/FormModPelicula[/]', \peliculasController::class . ':obtenerFormMod');
+$app->get('/ModPelicula[/]', \peliculasController::class . ':obtenerFormMod');
 //$app->get('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');
 //$app->post('/peliculas[/]', \usuarioController::class . ':retornarUsuario');
 
