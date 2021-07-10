@@ -68,9 +68,9 @@ public function obtenerFormMod($request, $response, $args){
     $jsonpeliculas = Peliculas::FormModPelicula($peliculas);
     $response->getBody()->Write(json_encode($jsonpeliculas));
     return $response ->withHeader('Content-Type', 'application/json');
-    $json_string = json_encode($response);
+    /*$json_string = json_encode($response);
     $file = 'peliculas.json';
-    file_put_contents($file, $json_string);
+    file_put_contents($file, $json_string);*/
 
 }
 
