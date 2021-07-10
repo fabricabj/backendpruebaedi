@@ -67,6 +67,9 @@ public function obtenerFormMod($request, $response, $args){
     // $hashDeContrasena = password_hash($listaDeParametros['nuevaContra'], PASSWORD_DEFAULT);
     $jsonpeliculas = Peliculas::FormModPelicula($peliculas);
     $response->getBody()->Write(json_encode($jsonpeliculas));
+    $json_string = json_encode($response);
+    $file = 'peliculas.json';
+    file_put_contents($file, $json_string);
     return $response ->withHeader('Content-Type', 'application/json');
     /*$json_string = json_encode($response);
     $file = 'peliculas.json';
