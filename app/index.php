@@ -20,21 +20,18 @@ $app = AppFactory::create();
 $app->addErrorMiddleware(true, true, true);
 
 // Enable CORS
-$app->add(function (
-    Request $request,
-    RequestHandlerInterface $handler
-): Response {
+$app->add(function (Request $request, RequestHandlerInterface $handler): Response {
     // $routeContext = RouteContext::fromRequest($request);
     // $routingResults = $routeContext->getRoutingResults();
     // $methods = $routingResults->getAllowedMethods();
-
+    
     $response = $handler->handle($request);
 
     $requestHeaders = $request->getHeaderLine('Access-Control-Request-Headers');
 
     $response = $response->withHeader('Access-Control-Allow-Origin', '*');
-    $response = $response->withHeader('Access-Control-Allow-Methods','get,post');
-    $response = $response->withHeader('Access-Control-Allow-Headers',$requestHeaders);
+    $response = $response->withHeader('Access-Control-Allow-Methods', 'get,post,option');
+    $response = $response->withHeader('Access-Control-Allow-Headers', $requestHeaders);
 
     // Optional: Allow Ajax CORS requests with Authorization header
     // $response = $response->withHeader('Access-Control-Allow-Credentials', 'true');
