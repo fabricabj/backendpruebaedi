@@ -12,9 +12,9 @@ class AccesoDatos
             //$this->objetoPDO = new PDO('mysql:host=sql10.freesqldatabase.com;dbname=gD97u3NHFm;charset=utf8', 'gD97u3NHFm', 'h4RjoZTwHJ', array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             //$this->objetoPDO = new PDO('mysql:host='.getenv('ServidorMySQL').';dbname='.getenv('Database').';charset=utf8', getenv("Usuario"), getenv('Pass'), array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             $this->objetoPDO = new PDO(
-                'mysql:host=remotemysql.com:3306;dbname=gD97u3NHFm;charset=utf8',
-                'gD97u3NHFm',
-                'tSqGuNqaAu',
+                'mysql:host=remotemysql.com:3306;dbname=2xReIjVx8f;charset=utf8',
+                '2xReIjVx8f',
+                '4lFDhrSQzn',
                 [
                     PDO::ATTR_EMULATE_PREPARES => false,
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
