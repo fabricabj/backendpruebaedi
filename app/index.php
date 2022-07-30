@@ -68,6 +68,7 @@ $app->post('/altapelicula[/]', \peliculasController::class . ':Alta');
 $app->post('/eliminarpelicula[/]', \peliculasController::class . ':DeletePelicula');
 $app->post('/FormModPelicula[/]', \peliculasController::class . ':obtenerFormMod');
 $app->post('/modificarpelicula[/]', \peliculasController::class . ':ModPelicula');
+$app->post('/validarusuario[/]', \usuarioController::class . ':ValidarUsuario');
 
 
 
