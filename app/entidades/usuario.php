@@ -40,8 +40,8 @@ class Usuario
             'SELECT * FROM `usuarios` WHERE nombre= (?)'
             );
         $consulta->execute([$usuario->nombre]);
-        $filas =$consulta->fetchColumn();
-            if($filas>0){
+        $row_cnt = $consulta->num_rows;
+            if($row_cnt>0){
                 echo 'Usuario existente';
             }else{
                 echo 'Usuario valido';
