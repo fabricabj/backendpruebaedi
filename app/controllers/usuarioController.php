@@ -31,7 +31,7 @@ class usuarioController
 
         return $response;
     }
-    public function ValidadUsuario($request, $response, $args)
+    public function ValidarUsuario($request, $response, $args)
         {
         $listaDeParametros = $request->getParsedBody();
         // $hashDeContrasena = password_hash($listaDeParametros['nuevaContra'], PASSWORD_DEFAULT);
