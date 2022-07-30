@@ -35,6 +35,7 @@ class Usuario
     }
     
     public static function ValidarUsuario($usuario){
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
         $consulta = $objAccesoDatos->prepararConsulta(
             'SELECT * FROM `usuarios` WHERE nombre= (?)'
             );
