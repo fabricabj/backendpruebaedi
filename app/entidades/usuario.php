@@ -40,8 +40,8 @@ class Usuario
             'SELECT * FROM `usuarios` WHERE nombre= (?)'
             );
         $consulta->execute([$usuario->nombre]);
-        $row_cnt = $consulta->num_rows;
-            if($row_cnt>0){
+        $numerofilas = mysql_num_rows($consulta);
+            if($numerofilas>0){
                 echo 'Usuario existente';
             }else{
                 echo 'Usuario valido';
