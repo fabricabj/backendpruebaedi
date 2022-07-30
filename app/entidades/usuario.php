@@ -41,8 +41,8 @@ class Usuario
             'SELECT * FROM `usuarios` WHERE nombre= (?)'
             );
         $consulta->execute([$usuario->nombre]);
-        $row_cnt = $consulta->num_rows;
-            if($row_cnt>0){
+        $consulta->store_result();
+            if($consulta->num_rows>0){
                 echo 'Usuario existente';
             }else{
                 echo 'Usuario valido';
