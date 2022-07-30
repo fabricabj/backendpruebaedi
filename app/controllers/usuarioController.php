@@ -31,6 +31,19 @@ class usuarioController
 
         return $response;
     }
+    public function ValidadUsuario($request, $response, $args)
+        {
+        $listaDeParametros = $request->getParsedBody();
+        // $hashDeContrasena = password_hash($listaDeParametros['nuevaContra'], PASSWORD_DEFAULT);
+
+        $usuario = new Usuario();
+        $usuario->nombre = $listaDeParametros['nombre'];
+
+        Usuario::ValidarUsuario($usuario);
+        //$response->getBody()->write(json_encode($usuario));
+
+        return $response;
+    }
 
     /*
 public function LeerJSONPost($request, $response, $args){
