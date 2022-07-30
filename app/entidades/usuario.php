@@ -41,10 +41,11 @@ class Usuario
             );
         $consulta->execute([$user->nombre]);
         $filas =$consulta->fetchColumn();
+        echo 'filas: '.$filas;
             if($filas>0){
                 echo 'Usuario invalido';
             }else{
-                echo $user->nombre;
+                echo 'usuario: '.$user->nombre;
                 echo 'Usuario valido';
             }
 
