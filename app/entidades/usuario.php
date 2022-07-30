@@ -33,6 +33,21 @@ class Usuario
 
         return;
     }
+    
+    public static function ValidarUsuario($usuario){
+        $consulta = $objAccesoDatos->prepararConsulta(
+            'SELECT * FROM `usuarios` WHERE nombre= (?)'
+            );
+        $consulta->execute([$usuario->nombre]);
+        $filas =$consulta->fetchColumn();
+            if($filas>0){
+                echo 'Usuario existente';
+            }else{
+                echo 'Usuario valido';
+            }
+
+        return;
+    }
 }
 
 ?>
