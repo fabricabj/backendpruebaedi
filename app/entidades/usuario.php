@@ -36,7 +36,6 @@ class Usuario
     
     public static function ValidarUsuario($usuario){
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        int $mysqli_result->num_rows;
         $consulta = $objAccesoDatos->prepararConsulta(
             'SELECT * FROM `usuarios` WHERE nombre= (?)'
             );
