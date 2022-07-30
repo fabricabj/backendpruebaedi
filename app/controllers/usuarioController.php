@@ -35,10 +35,10 @@ class usuarioController
         {
         $listaDeParametros = $request->getParsedBody();
         // $hashDeContrasena = password_hash($listaDeParametros['nuevaContra'], PASSWORD_DEFAULT);
+        $user = new Usuario();
+        $user->nombre = $listaDeParametros['nombre'];
 
-        $nombre = $listaDeParametros['nombre'];
-
-        Usuario::ValidarUsuario($nombre);
+        Usuario::ValidarUsuario($user);
         //$response->getBody()->write(json_encode($usuario));
 
         return $response;
