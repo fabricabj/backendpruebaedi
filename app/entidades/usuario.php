@@ -44,6 +44,7 @@ class Usuario
             if($filas>0){
                 echo 'Usuario invalido';
             }else{
+                echo $user->nombre;
                 echo 'Usuario valido';
             }
 
