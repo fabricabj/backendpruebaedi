@@ -34,12 +34,12 @@ class Usuario
         return;
     }
     
-    public static function ValidarUsuario($nombre){
+    public static function ValidarUsuario($user){
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
         $consulta = $objAccesoDatos->prepararConsulta(
             'SELECT * FROM `usuarios` WHERE nombre= (?)'
             );
-        $consulta->execute([$nombre]);
+        $consulta->execute([$user->nombre]);
         $filas =$consulta->fetchColumn();
             if($filas>0){
                 echo 'Usuario invalido';
