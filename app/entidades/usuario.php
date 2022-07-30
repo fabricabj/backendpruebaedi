@@ -36,12 +36,13 @@ class Usuario
     
     public static function ValidarUsuario($usuario){
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        int $mysqli_result->num_rows;
         $consulta = $objAccesoDatos->prepararConsulta(
             'SELECT * FROM `usuarios` WHERE nombre= (?)'
             );
         $consulta->execute([$usuario->nombre]);
-        $numerofilas = mysql_num_rows($consulta);
-            if($numerofilas>0){
+        $row_cnt = $consulta->num_rows;
+            if($row_cnt>0){
                 echo 'Usuario existente';
             }else{
                 echo 'Usuario valido';
