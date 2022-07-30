@@ -25,7 +25,9 @@ class Usuario
 
         $consulta->execute([$usuario->nombre, $usuario->contrasenia]);
         $filas =$consulta->fetchColumn();
+        echo 'filas: '.$filas;
             if($filas>0){
+                echo 'nombre: '.$usuario->nombre. 'contraseña: '.$usuario->contrasenia;
                 echo 'Bienvenido';
             }else{
                 echo 'Usuario o contraseña incorrecto';
